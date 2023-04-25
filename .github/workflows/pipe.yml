@@ -24,11 +24,11 @@ jobs:
     - name: Compilando JAVA
       run: |
           cd src
-          javac -cp . Main.java Pessoa.java
+          javac -cp . Main.java Teste.java
     - name: Executando JAVA
       run: |
           cd src
-          java -cp . Main 
+          java -cp . Teste
 
         
 
