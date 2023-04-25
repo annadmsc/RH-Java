@@ -12,7 +12,7 @@ class Pessoa {
     private NullType dataAgendamento;
     private Periodo periodo;
 
-    public Pessoa(String nome, String cpf, String telefone, NullType dataNascimento, NullType dataAgendamento, Periodo periodo) {
+    public Pessoa(String nome, String cpf, String telefone, NullType dataNascimento, NullType dataAgendamento, String periodo) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;

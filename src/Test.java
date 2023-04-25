@@ -13,8 +13,8 @@ public class Test {
         LocalDateTime dataNascimento = null;
 
         LocalDateTime dataAgendamento = null;
-        Periodo periodo = Periodo.valueOf("MANHA");
-        Pessoa pessoa = new Pessoa(nome, cpf, telefone, null, null, periodo);
+
+        Pessoa pessoa = new Pessoa(nome, cpf, telefone, null, null, "MANHã");
 
         // Verifica se os valores das propriedades estão corretos
         if (!pessoa.getNome().equals(nome)) {
