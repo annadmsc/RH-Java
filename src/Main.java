@@ -25,14 +25,12 @@ public class Main {
         System.out.println("Digite o período (MANHA, TARDE ou NOITE):");
         Periodo periodo = Periodo.valueOf(scanner.nextLine().toUpperCase());
 
-        Pessoa pessoa = new Pessoa(nome, cpf, telefone, dataNascimento, dataAgendamento, periodo);
+        Pessoa pessoa = new Pessoa(nome, cpf, telefone, null, null, periodo);
 
         System.out.println("Pessoa registrada:");
         System.out.println("Nome: " + pessoa.getNome());
         System.out.println("CPF: " + pessoa.getCpf());
         System.out.println("Telefone: " + pessoa.getTelefone());
-        System.out.println("Data de nascimento: " + pessoa.getDataNascimento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-        System.out.println("Data de agendamento: " + pessoa.getDataAgendamento().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")));
         System.out.println("Período: " + pessoa.getPeriodo());
     }
 }

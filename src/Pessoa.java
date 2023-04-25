@@ -1,5 +1,4 @@
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import javax.lang.model.type.NullType;
 
 enum Periodo {
     MANHA, TARDE, NOITE
@@ -9,11 +8,11 @@ class Pessoa {
     private String nome;
     private String cpf;
     private String telefone;
-    private LocalDate dataNascimento;
-    private LocalDateTime dataAgendamento;
+    private NullType dataNascimento;
+    private NullType dataAgendamento;
     private Periodo periodo;
 
-    public Pessoa(String nome, String cpf, String telefone, LocalDate dataNascimento, LocalDateTime dataAgendamento, Periodo periodo) {
+    public Pessoa(String nome, String cpf, String telefone, NullType dataNascimento, NullType dataAgendamento, Periodo periodo) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
@@ -34,11 +33,11 @@ class Pessoa {
         return telefone;
     }
 
-    public LocalDate getDataNascimento() {
+    public NullType getDataNascimento() {
         return dataNascimento;
     }
 
-    public LocalDateTime getDataAgendamento() {
+    public NullType getDataAgendamento() {
         return dataAgendamento;
     }
 
