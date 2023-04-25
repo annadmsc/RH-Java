@@ -1,8 +1,5 @@
 import javax.lang.model.type.NullType;
 
-enum Periodo {
-    MANHA, TARDE, NOITE
-}
 
 class Pessoa {
     private String nome;
@@ -10,7 +7,7 @@ class Pessoa {
     private String telefone;
     private NullType dataNascimento;
     private NullType dataAgendamento;
-    private Periodo periodo;
+
 
     public Pessoa(String nome, String cpf, String telefone, NullType dataNascimento, NullType dataAgendamento, String periodo) {
         this.nome = nome;
@@ -18,7 +15,6 @@ class Pessoa {
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
         this.dataAgendamento = dataAgendamento;
-        this.periodo = periodo;
     }
 
     public String getNome() {
@@ -41,7 +37,4 @@ class Pessoa {
         return dataAgendamento;
     }
 
-    public Periodo getPeriodo() {
-        return periodo;
-    }
 }

@@ -27,8 +27,6 @@ public class Test {
             System.out.println("ERRO: telefone incorreto");
         }
 
-        if (pessoa.getPeriodo() != periodo) {
-            System.out.println("ERRO: período incorreto");
-        }
+    
     }
 }
