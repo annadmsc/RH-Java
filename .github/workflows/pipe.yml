@@ -1,7 +1,12 @@
-# This workflow will build a Java project with Ant
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-ant
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
 
-name: Sistema RH
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI with Maven
 
 on:
   push:
@@ -10,7 +15,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  Compilacao:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -21,15 +26,16 @@ jobs:
       with:
         java-version: '11'
         distribution: 'temurin'
-    - name: Compilando JAVA
-      run: |
-          cd src
-          javac -cp . Main.java 
-          javac -cp . Test.java
-    - name: Executando JAVA
-      run: |
-          cd src
-          java -cp . Test
+        cache: maven
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
 
-        
-
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Deploy Docker image
+      with:
+          image: annadmsc/maven_aula
+          tags: 1.0
+          registry: docker.io
+          dockerfile: dockerfile
+          username: annadmsc
+          password: ${{ secrets.DOCKER_PASSWORD }}
