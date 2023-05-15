@@ -37,5 +37,5 @@ jobs:
           tags: 1.0
           registry: docker.io
           dockerfile: dockerfile
-          username: annadmsc
-          password: HarryIsMyBoy
+          username: a
+          password: b
